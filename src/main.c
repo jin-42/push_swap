@@ -6,7 +6,7 @@
 /*   By: fsulvac <fsulvac@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 20:33:08 by fsulvac           #+#    #+#             */
-/*   Updated: 2024/01/25 16:38:31 by fsulvac          ###   ########.fr       */
+/*   Updated: 2024/01/28 16:08:35 by fsulvac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,8 +174,3 @@ void rrr(t_list **stack_a, t_list **stack_b)
 /*          P A R S I N G          */
 /* --------------------------------*/
 
-int ft_parsing(int ac, char **av)
-{
-    if (ac != 2 || av[1][0] == NULL)
-        return (ft_putstr_fd("push_swap $ARG", 2), 2)
-}
