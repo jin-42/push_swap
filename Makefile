@@ -1,5 +1,5 @@
 # Variable Names
-CLIENT_EXECUTABLE = push_swap
+EXEC = push_swap
 CC = gcc -g3
 CFLAGS = -Wall -Wextra -Werror -fsanitize=address
 INCLUDE_DIRS = -I include/ -I ft_libft/include/
@@ -13,10 +13,10 @@ CLIENT_OBJ = $(SOURCES:.c=.o)
 FT_LIBFT = ft_libft/libft.a
 
 # Targets
-all: $(CLIENT_EXECUTABLE) $(SERVER_EXECUTABLE) $(FT_LIBFT)
+all: $(EXEC) $(FT_LIBFT)
 
-$(CLIENT_EXECUTABLE): $(CLIENT_OBJ) $(FT_LIBFT) include/push_swap.h
-	$(CC) $(CFLAGS) $(INCLUDE_DIRS) $(CLIENT_OBJ) $(FT_LIBFT) -o $(CLIENT_EXECUTABLE)
+$(EXEC): $(CLIENT_OBJ) $(FT_LIBFT) include/push_swap.h
+	$(CC) $(CFLAGS) $(INCLUDE_DIRS) $(CLIENT_OBJ) $(FT_LIBFT) -o $(EXEC)
 
 %.o: %.c
 	$(CC) $(CFLAGS) $(INCLUDE_DIRS) -c $< -o $@
@@ -34,7 +34,7 @@ FORCE:
 
 # Full Clean
 fclean: clean
-	rm -f $(CLIENT_EXECUTABLE)
+	rm -f $(EXEC)
 	make fclean -C ft_libft
 
 # Rebuild
