@@ -9,7 +9,8 @@
 /*   Updated: 2023/11/18 13:17:27 by fsulvac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+
+#include "../include/libft.h"
 
 static int	ft_check(char c, char const *set)
 {

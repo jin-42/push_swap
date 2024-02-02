@@ -1,7 +1,6 @@
 NAME = libft.a
 
 FT_PRINTF_SRCS = ft_printf/ft_printf.c \
-                ft_printf/main.c \
                 ft_printf/print_char_str.c \
                 ft_printf/print_hex_uppercase.c \
                 ft_printf/print_ptr.c \
@@ -48,17 +47,13 @@ LIBFT_SRCS = libft/ft_atoi.c \
              libft/ft_tolower.c \
              libft/ft_toupper.c
 
-FT_PRINTF_HEADERS = ft_printf/ft_printf.h
-GNL_HEADERS = gnl/get_next_line.h
-LIBFT_HEADERS = libft/libft.h
 
 SRCS = $(FT_PRINTF_SRCS) $(GNL_SRCS) $(LIBFT_SRCS)
 OBJS = $(SRCS:.c=.o)
-HEADERS = $(FT_PRINTF_HEADERS) $(GNL_HEADERS) $(LIBFT_HEADERS)
+HEADERS = include/libft.h
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
-INCFLAGS = -I ft_printf -I gnl -I libft
+CFLAGS = -Wall -Wextra -Werror -I include/
 
 all: $(NAME)
 

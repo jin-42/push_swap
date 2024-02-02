@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/libft.h"
 
 /*
 	In a 64bits system the size of a pointer is a 8bits : unsigned long long

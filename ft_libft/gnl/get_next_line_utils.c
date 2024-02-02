@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../include/libft.h"
 
 char	*str_init(char *s)
 {

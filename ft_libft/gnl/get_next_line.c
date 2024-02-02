@@ -9,7 +9,7 @@
 /*   Updated: 2023/12/30 18:56:48 by fsulvac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "get_next_line.h"
+#include "../include/libft.h"
 
 char	*gnl_strjoin(char *str, char *buffer)
 {

@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/libft.h"
 
-static size_t	ft_strlen(const char *str)
+static size_t	ft_strlen_static(const char *str)
 {
 	size_t	len;
 
@@ -35,6 +35,6 @@ int	print_str(char *str)
 
 	if (!str)
 		return (write(1, "(null)", 6));
-	size_lenght = ft_strlen(str);
+	size_lenght = ft_strlen_static(str);
 	return (write(1, str, size_lenght));
 }
