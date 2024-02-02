@@ -20,7 +20,7 @@ void	rra(t_list **stack_a)
 	ft_printf("rra\n");
 }
 
-void	rra(t_list **stack_b)
+void	rrb(t_list **stack_b)
 {
 	ft_reverse_rotate(stack_b);
 	ft_printf("rrb\n");

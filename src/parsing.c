@@ -88,12 +88,12 @@ t_list	*ft_parsing(int ac, char **av)
 	strs = ft_split(av[1], ' ');
 	if (!strs)
 		return (ft_printf("Error in split, strs is NULL"), NULL);
-	lst = split_to_lst;
+	lst = split_to_lst(strs);
 	free_split(strs);
 	if (lst == NULL)
 		return (ft_printf("Error in lst, lst is NULL"), NULL);
 	if (check_value_identical(&lst) == false)
-		return (ft_printf("In lst, they are at least two number identical !"),
+		return (ft_printf("In lst, they are at least two number identical !"), ft_free_list(lst), 
 			NULL);
 	init_index(&lst);
 	return (lst);

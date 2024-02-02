@@ -6,13 +6,12 @@ static void	ft_swap(t_list **head)
 	t_list	*second;
 
 	if (*head == NULL || (*head)->next == NULL)
-		return (*head);
+		return ;
 	first = *head;
 	second = (*head)->next;
 	first->next = second->next;
 	second->next = first;
 	*head = second;
-	return (*head);
 }
 
 void	sa(t_list **head)

@@ -7,7 +7,7 @@ static void	ft_push(t_list **dest, t_list **src)
 	if (!(*src))
 		return ;
 	tmp = *src;
-	*src = *(src)->next;
+	*src = (*src)->next;
 	tmp->next = *dest;
 	*dest = tmp;
 }

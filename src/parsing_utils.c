@@ -43,3 +43,13 @@ void init_index(t_list **lst)
         tmp = tmp->next;
     }
 }
+
+void ft_free_list(t_list *head) 
+{
+    t_list *temp;
+    while (head != NULL) {
+        temp = head;
+        head = head->next;
+        free(temp);
+    }
+}

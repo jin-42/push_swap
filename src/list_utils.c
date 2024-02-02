@@ -1,4 +1,4 @@
-#include "../include/push_swap"
+#include "../include/push_swap.h"
 
 void	printList(t_list *head)
 {
@@ -12,6 +12,8 @@ void	printList(t_list *head)
 		tmp = tmp->next;
 	}
 }
+
+
 
 t_list	*ft_new_node(int value)
 {
@@ -35,19 +37,23 @@ void	ft_add_front(t_list **lst, t_list *node)
 	}
 }
 
-void	ft_add_back(t_list **lst, t_list *node)
+void ft_add_back(t_list **lst, t_list *node)
 {
-	t_list	*tmp;
-
-	if (!lst)
-	{
-		*lst = node;
-		return ;
-	}
-	tmp = *lst;
-	while (tmp->next != NULL)
-		tmp = tmp->next;
-	tmp->next = node;
+    if (!lst || !node) {
+        return; // Handle invalid input
+    }
+    
+    if (!*lst) {
+        *lst = node; // If lst is empty, set lst to node
+        return;
+    }
+    
+    t_list *tmp = *lst;
+    while (tmp->next != NULL) {
+        tmp = tmp->next;
+    }
+    tmp->next = node; // Add node to the end of lst
+    node->next = NULL; // Ensure the next pointer of node is properly set
 }
 
 size_t	lst_size(t_list **lst)

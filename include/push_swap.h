@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdbool.h>
+# include "../ft_libft/include/libft.h"
 
 typedef struct s_list
 {
@@ -46,6 +47,6 @@ void    pa(t_list  **stack_a, t_list **stack_b);
 void    pb(t_list  **stack_a, t_list **stack_b);
 
 t_list	*ft_parsing(int ac, char **av);
-
+void ft_free_list(t_list *head);
 void init_index(t_list **lst);
 #endif 
