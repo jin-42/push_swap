@@ -78,8 +78,8 @@ static bool	check_value_identical(t_list **head)
 
 t_list	*ft_parsing(int ac, char **av)
 {
-	char **strs;
-	t_list *lst;
+	char	**strs;
+	t_list	*lst;
 
 	if (ac != 2)
 		return (ft_printf("./push_swap $ARG"), NULL);
@@ -93,18 +93,20 @@ t_list	*ft_parsing(int ac, char **av)
 	if (lst == NULL)
 		return (ft_printf("Error in lst, lst is NULL"), NULL);
 	if (check_value_identical(&lst) == false)
-		return (ft_printf("In lst, they are at least two number identical !"), ft_free_list(lst), 
-			NULL);
-	init_index(&lst);
+		return (ft_printf("In lst, they are at least two number identical !"),
+			ft_free_list(lst), NULL);
+	init_index(lst);
 	return (lst);
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_list *lst;
 
 	lst = ft_parsing(ac, av);
 	if (lst == false)
 		return (ft_printf("false"), 1);
+	printList(lst);
+	ft_free_list(lst);
 	return (ft_printf("true"), 0);
 }

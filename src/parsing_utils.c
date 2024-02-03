@@ -1,55 +1,73 @@
 #include "../include/push_swap.h"
 
-static void assign_indexes(t_list **lst)
+static void	ft_extract_values(t_list *lst, int *values)
 {
-    long i;
-    t_list *tmp;
+	int	i;
 
-    i = 0;
-    tmp = *lst;
-    while (tmp != NULL)
-    {
-        tmp->index = i;
+	i = 0;
+	while (lst != NULL)
+	{
+		values[i++] = lst->value;
+		lst = lst->next;
+	}
+}
+
+static void	ft_bubble_sort(int *arr, int size)
+{
+	int	i;
+	int	j;
+	int	temp;
+
+	i = 0;
+	while (i < size - 1)
+	{
+		j = 0;
+		while (j < size - i - 1)
+		{
+			if (arr[j] > arr[j + 1])
+			{
+				temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+			j++;
+		}
+		i++;
+	}
+}
+
+void	init_index(t_list *lst)
+{
+	int		*values;
+	t_list	*current;
+	size_t		i;
+
+	values = (int *)malloc(lst_size(&lst) * sizeof(int));
+	ft_extract_values(lst, values);
+	ft_bubble_sort(values, lst_size(&lst));
+	current = lst;
+	i = 0;
+	while (i < lst_size(&lst))
+	{
+		while (current != NULL)
+		{
+			if (current->value == values[i])
+				current->index = i;
+			current = current->next;
+		}
         i++;
-        tmp = tmp->next;
-    }
+		current = lst;
+	}
+	free(values);
 }
 
-static void ft_swap_index(t_list *a, t_list *b)
+void	ft_free_list(t_list *head)
 {
-    long temp;
-    
-    temp = a->index;
-    a->index = b->index;
-    b->index = temp;
-}
-
-void init_index(t_list **lst)
-{
-    t_list *tmp;
-    t_list *tmp_j;
-
-    assign_indexes(lst);
-    tmp = *lst;
-    while (tmp != NULL)
-    {
-        tmp_j = tmp->next;
-        while (tmp_j != NULL)
-        {
-            if (tmp->value > tmp_j->value && tmp->index < tmp_j->index)
-                ft_swap_index(tmp, tmp_j);
-            tmp_j = tmp_j->next;
-        }
-        tmp = tmp->next;
-    }
-}
-
-void ft_free_list(t_list *head) 
-{
-    t_list *temp;
-    while (head != NULL) {
-        temp = head;
-        head = head->next;
-        free(temp);
-    }
+	t_list *temp;
+	while (head != NULL)
+	{
+		temp = head;
+		head = head->next;
+		free(temp);
+	}
 }

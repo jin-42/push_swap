@@ -7,13 +7,10 @@ void	printList(t_list *head)
 	tmp = head;
 	while (tmp != NULL)
 	{
-		ft_putnbr_fd(tmp->value, 1);
-		ft_putendl_fd("", 1);
+		ft_printf("Index: %d, Value: %d\n", tmp->index, tmp->value);
 		tmp = tmp->next;
 	}
 }
-
-
 
 t_list	*ft_new_node(int value)
 {
@@ -37,23 +34,26 @@ void	ft_add_front(t_list **lst, t_list *node)
 	}
 }
 
-void ft_add_back(t_list **lst, t_list *node)
+void	ft_add_back(t_list **lst, t_list *node)
 {
-    if (!lst || !node) {
-        return; // Handle invalid input
-    }
-    
-    if (!*lst) {
-        *lst = node; // If lst is empty, set lst to node
-        return;
-    }
-    
-    t_list *tmp = *lst;
-    while (tmp->next != NULL) {
-        tmp = tmp->next;
-    }
-    tmp->next = node; // Add node to the end of lst
-    node->next = NULL; // Ensure the next pointer of node is properly set
+	t_list	*tmp;
+
+	if (!lst || !node)
+	{
+		return ; // Handle invalid input
+	}
+	if (!*lst)
+	{
+		*lst = node; // If lst is empty, set lst to node
+		return ;
+	}
+	tmp = *lst;
+	while (tmp->next != NULL)
+	{
+		tmp = tmp->next;
+	}
+	tmp->next = node;  // Add node to the end of lst
+	node->next = NULL; // Ensure the next pointer of node is properly set
 }
 
 size_t	lst_size(t_list **lst)
