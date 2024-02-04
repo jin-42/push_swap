@@ -49,4 +49,5 @@ void    pb(t_list  **stack_a, t_list **stack_b);
 t_list	*ft_parsing(int ac, char **av);
 void ft_free_list(t_list *head);
 void init_index(t_list *lst);
+void	sort_three_element(t_lst **lst);
 #endif 

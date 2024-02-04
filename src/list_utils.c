@@ -7,7 +7,7 @@ void	printList(t_list *head)
 	tmp = head;
 	while (tmp != NULL)
 	{
-		ft_printf("Index: %d, Value: %d\n", tmp->index, tmp->value);
+		ft_printf("\n%d", tmp->value);
 		tmp = tmp->next;
 	}
 }

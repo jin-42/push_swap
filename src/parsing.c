@@ -98,15 +98,3 @@ t_list	*ft_parsing(int ac, char **av)
 	init_index(lst);
 	return (lst);
 }
-
-int	main(int ac, char **av)
-{
-	t_list *lst;
-
-	lst = ft_parsing(ac, av);
-	if (lst == false)
-		return (ft_printf("false"), 1);
-	printList(lst);
-	ft_free_list(lst);
-	return (ft_printf("true"), 0);
-}
