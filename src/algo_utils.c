@@ -6,7 +6,7 @@
 /*   By: fsulvac < fsulvac@student.42lyon.fr >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 14:50:02 by fsulvac           #+#    #+#             */
-/*   Updated: 2024/02/09 14:52:47 by fsulvac          ###   ########.fr       */
+/*   Updated: 2024/02/09 15:01:44 by fsulvac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,3 +61,4 @@ int	ft_get_min_pos(t_list **lst)
 		head = head->next;
 	}
 	return (pos);
+}

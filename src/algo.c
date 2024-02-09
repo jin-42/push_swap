@@ -6,7 +6,7 @@
 /*   By: fsulvac < fsulvac@student.42lyon.fr >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 14:44:44 by fsulvac           #+#    #+#             */
-/*   Updated: 2024/02/09 14:53:50 by fsulvac          ###   ########.fr       */
+/*   Updated: 2024/02/09 15:03:29 by fsulvac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,6 @@ int	main(int ac, char **av)
 		return (1);
 	lst_b = NULL;
 	ft_choose_sort(&lst_a, &lst_b);
-	if (lst_a == NULL)
-		ft_printf("zeubi");
 	ft_free_list(lst_a);
 	return (0);
 }
