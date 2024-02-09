@@ -4,7 +4,8 @@ CC = gcc -g3
 CFLAGS = -Wall -Wextra -Werror #-fsanitize=address
 INCLUDE_DIRS = -I include/ -I ft_libft/include/
 
-SOURCES = src/list_utils.c  src/parsing.c  src/parsing_utils.c  src/push.c  src/reverse_rotate.c src/algo.c src/rotate.c  src/swap.c
+SOURCES = src/algo.c    src/parsing_utils.c  src/reverse_rotate.c  src/sort.c \
+src/algo_utils.c  src/list_utils.c  src/parsing.c     src/push.c           src/rotate.c          src/swap.c
 
 # Object Files
 CLIENT_OBJ = $(SOURCES:.c=.o)

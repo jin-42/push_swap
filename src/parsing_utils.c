@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing_utils.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fsulvac < fsulvac@student.42lyon.fr >      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/09 14:44:53 by fsulvac           #+#    #+#             */
+/*   Updated: 2024/02/09 14:49:46 by fsulvac          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
 static void	ft_extract_values(t_list *lst, int *values)
@@ -40,7 +52,7 @@ void	init_index(t_list *lst)
 {
 	int		*values;
 	t_list	*current;
-	size_t		i;
+	size_t	i;
 
 	values = (int *)malloc(lst_size(&lst) * sizeof(int));
 	ft_extract_values(lst, values);
@@ -55,7 +67,7 @@ void	init_index(t_list *lst)
 				current->index = i;
 			current = current->next;
 		}
-        i++;
+		i++;
 		current = lst;
 	}
 	free(values);
@@ -63,7 +75,8 @@ void	init_index(t_list *lst)
 
 void	ft_free_list(t_list *head)
 {
-	t_list *temp;
+	t_list	*temp;
+
 	while (head != NULL)
 	{
 		temp = head;
