@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsulvac < fsulvac@student.42lyon.fr >      +#+  +:+       +#+        */
+/*   By: fsulvac <fsulvac@42.lyon.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 14:45:01 by fsulvac           #+#    #+#             */
-/*   Updated: 2024/02/09 14:48:54 by fsulvac          ###   ########.fr       */
+/*   Updated: 2024/02/13 14:13:11 by fsulvac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,4 +112,35 @@ t_list	*ft_parsing(int ac, char **av)
 			ft_free_list(lst), NULL);
 	init_index(lst);
 	return (lst);
+}
+
+
+
+bool	error_syntax(const char *str)
+{
+	int	i;
+
+	i = 0;
+	if (!(str[i] == '+' || str[i] == '-' || ft_isdigit(str[i])))
+		return (true);
+	if ((str[i] == '+' || str[i] == '-') && !ft_isdigit(str[i + 1]))
+		return (true);
+	while (str[++i])
+	{
+		if (!(ft_isdigit(str[i])))
+			return (true);
+	}
+	return (false);
+}
+
+t_list *ft_parsing(int ac, char **av)
+{
+	long 	x;
+	int		i;
+
+	i = 0;
+	while (av[i])
+	{
+		if (error_syntax)
+	}
 }
