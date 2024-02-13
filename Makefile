@@ -1,7 +1,7 @@
 # Variable Names
 EXEC = push_swap
 CC = gcc -g3
-CFLAGS = -Wall -Wextra -Werror #-fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address
 INCLUDE_DIRS = -I include/ -I ft_libft/include/
 
 SOURCES = src/algo.c    src/parsing_utils.c  src/reverse_rotate.c  src/sort.c \

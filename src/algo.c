@@ -71,12 +71,18 @@ int	main(int ac, char **av)
 {
 	t_list	*lst_a;
 	t_list	*lst_b;
+	char	**strs;
 
-	lst_a = ft_parsing(ac, av);
+	if (ac > 2)
+		strs = av + 1;
+	else if (ac == 2)
+		strs = ft_split(av[1], ' ');
+	else 
+		return (ft_printf("Error syntaxe", 1));
+	lst_a = ft_parsing(strs);
 	if (lst_a == NULL)
 		return (1);
 	lst_b = NULL;
 	ft_choose_sort(&lst_a, &lst_b);
-	ft_free_list(lst_a);
 	return (0);
 }

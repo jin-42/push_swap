@@ -12,19 +12,29 @@
 
 #include "../include/push_swap.h"
 
-static bool	check_char(char *s)
+long	ft_atol(char *str)
 {
-	size_t	i;
+	long	nb;
+	int		sign;
+	int		i;
 
 	i = 0;
-	while (s[i])
+	sign = 1;
+	nb = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		if ((s[i] >= '0' && s[i] <= '9') || (s[i] == ' ') || (s[i] == '-'))
-			i++;
-		else
-			return (false);
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
 	}
-	return (true);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		nb = nb * 10 + str[i] - '0';
+		i++;
+	}
+	return (nb * sign);
 }
 
 static t_list	*split_to_lst(char **strs)
@@ -55,7 +65,7 @@ static t_list	*split_to_lst(char **strs)
 	return (head);
 }
 
-static void	free_split(char **strs)
+void	free_split(char **strs)
 {
 	size_t	i;
 
@@ -88,35 +98,8 @@ static bool	check_value_identical(t_list **head)
 	return (true);
 }
 
-t_list	*ft_parsing(int ac, char **av)
-{
-	char	**strs;
-	t_list	*lst;
 
-	if (check_char(av[1]) == false)
-		return (ft_printf("In $ARG, just number and space please !"), NULL);
-	if (ac == 2)
-	{
-		strs = ft_split(av[1], ' ');
-		if (!strs)
-			return (ft_printf("Error in split, strs is NULL"), NULL);
-	}
-	else 
-		strs = av + 1;
-	lst = split_to_lst(strs);
-	free_split(strs);
-	if (lst == NULL)
-		return (ft_printf("Error in lst, lst is NULL"), NULL);
-	if (check_value_identical(&lst) == false)
-		return (ft_printf("In lst, they are at least two number identical !"),
-			ft_free_list(lst), NULL);
-	init_index(lst);
-	return (lst);
-}
-
-
-
-bool	error_syntax(const char *str)
+static bool	error_syntax(const char *str)
 {
 	int	i;
 
@@ -133,14 +116,24 @@ bool	error_syntax(const char *str)
 	return (false);
 }
 
-t_list *ft_parsing(int ac, char **av)
+t_list *ft_parsing(char **av)
 {
-	long 	x;
 	int		i;
+	t_list	*lst;
 
-	i = 0;
-	while (av[i])
+	i = -1;
+	while (av[++i])
 	{
-		if (error_syntax)
+		if (error_syntax(av[i]))
+			return (ft_printf("In $ARG, just number and space please !"), NULL);
+		if (ft_atol(av[i]) > INT_MAX || ft_atol(av[i]) < INT_MIN)
+			return (ft_printf("Entry superior INT"), NULL);
 	}
+	lst = split_to_lst(av);
+	if (lst == NULL)
+		return (ft_printf("Error in lst, lst is NULL"), NULL);
+	if (check_value_identical(&lst) == false)
+		return (ft_printf("two number are equal !\n"), ft_free_list(lst), NULL);
+	init_index(lst);
+	return (lst);
 }

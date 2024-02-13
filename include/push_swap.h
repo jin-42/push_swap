@@ -46,7 +46,7 @@ void				rrr(t_list **stack_a, t_list **stack_b);
 void				pa(t_list **stack_a, t_list **stack_b);
 void				pb(t_list **stack_a, t_list **stack_b);
 
-t_list				*ft_parsing(int ac, char **av);
+t_list				*ft_parsing(char **av);
 void				ft_free_list(t_list *head);
 void				init_index(t_list *lst);
 bool				ft_check_sort(t_list **lst);
@@ -56,4 +56,5 @@ void				sort_five_element(t_list **a, t_list **b);
 t_list				*ft_search_max_value_lst(t_list *lst);
 int					ft_get_min_value(t_list **lst);
 int					ft_get_min_pos(t_list **lst);
+void				free_split(char **strs);
 #endif
