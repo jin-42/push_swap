@@ -93,13 +93,16 @@ t_list	*ft_parsing(int ac, char **av)
 	char	**strs;
 	t_list	*lst;
 
-	if (ac != 2)
-		return (ft_printf("./push_swap $ARG"), NULL);
 	if (check_char(av[1]) == false)
 		return (ft_printf("In $ARG, just number and space please !"), NULL);
-	strs = ft_split(av[1], ' ');
-	if (!strs)
-		return (ft_printf("Error in split, strs is NULL"), NULL);
+	if (ac == 2)
+	{
+		strs = ft_split(av[1], ' ');
+		if (!strs)
+			return (ft_printf("Error in split, strs is NULL"), NULL);
+	}
+	else 
+		strs = av + 1;
 	lst = split_to_lst(strs);
 	free_split(strs);
 	if (lst == NULL)

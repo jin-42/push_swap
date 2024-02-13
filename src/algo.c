@@ -63,6 +63,8 @@ static void	ft_choose_sort(t_list **a, t_list **b)
 		sort_five_element(a, b);
 	else if (lst_size(a) >= 6)
 		ft_radix_with_index(a, b);
+	ft_free_list(*a);
+	ft_free_list(*b);
 }
 
 int	main(int ac, char **av)
