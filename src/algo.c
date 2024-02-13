@@ -77,7 +77,7 @@ int	main(int ac, char **av)
 		strs = av + 1;
 	else if (ac == 2)
 		strs = ft_split(av[1], ' ');
-	else 
+	else
 		return (ft_printf("Error syntaxe", 1));
 	lst_a = ft_parsing(strs);
 	if (lst_a == NULL)

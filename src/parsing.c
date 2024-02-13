@@ -98,7 +98,6 @@ static bool	check_value_identical(t_list **head)
 	return (true);
 }
 
-
 static bool	error_syntax(const char *str)
 {
 	int	i;
@@ -116,10 +115,10 @@ static bool	error_syntax(const char *str)
 	return (false);
 }
 
-t_list *ft_parsing(char **av)
+t_list	*ft_parsing(char **av)
 {
-	int		i;
-	t_list	*lst;
+	int i;
+	t_list *lst;
 
 	i = -1;
 	while (av[++i])

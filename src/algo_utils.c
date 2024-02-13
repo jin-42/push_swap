@@ -48,9 +48,9 @@ int	ft_get_min_value(t_list **lst)
 
 int	ft_get_min_pos(t_list **lst)
 {
-	t_list		*head;
-	int			min_value;
-	int			pos;
+	t_list *head;
+	int min_value;
+	int pos;
 
 	head = *lst;
 	min_value = ft_get_min_value(lst);

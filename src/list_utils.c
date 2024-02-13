@@ -66,8 +66,8 @@ void	ft_add_back(t_list **lst, t_list *node)
 
 size_t	lst_size(t_list **lst)
 {
-	size_t		i;
-	t_list		*tmp;
+	size_t	i;
+	t_list	*tmp;
 
 	i = 1;
 	if (!lst)
