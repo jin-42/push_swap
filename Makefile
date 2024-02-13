@@ -5,7 +5,8 @@ CFLAGS = -Wall -Wextra -Werror
 INCLUDE_DIRS = -I include/ -I ft_libft/include/
 
 SOURCES = src/algo.c    src/parsing_utils.c  src/reverse_rotate.c  src/sort.c \
-src/algo_utils.c  src/list_utils.c  src/parsing.c     src/push.c           src/rotate.c          src/swap.c
+src/algo_utils.c  src/list_utils.c  src/parsing.c     src/push.c           src/rotate.c   \
+src/parsing_utils_two.c     src/swap.c
 
 # Object Files
 CLIENT_OBJ = $(SOURCES:.c=.o)

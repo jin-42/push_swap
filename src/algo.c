@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsulvac < fsulvac@student.42lyon.fr >      +#+  +:+       +#+        */
+/*   By: fsulvac <fsulvac@42.lyon.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 14:44:44 by fsulvac           #+#    #+#             */
-/*   Updated: 2024/02/09 15:03:29 by fsulvac          ###   ########.fr       */
+/*   Updated: 2024/02/13 17:43:03 by fsulvac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static void	ft_radix_with_index(t_list **lst_a, t_list **lst_b)
 static void	ft_choose_sort(t_list **a, t_list **b)
 {
 	if (lst_size(a) == 2)
-		ra(a);
+		sa(a);
 	else if (lst_size(a) == 3)
 		sort_three_element(a);
 	else if (lst_size(a) == 4)

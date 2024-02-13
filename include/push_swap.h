@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsulvac < fsulvac@student.42lyon.fr >      +#+  +:+       +#+        */
+/*   By: fsulvac <fsulvac@42.lyon.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 14:57:06 by fsulvac           #+#    #+#             */
-/*   Updated: 2024/02/09 14:57:47 by fsulvac          ###   ########.fr       */
+/*   Updated: 2024/02/13 17:43:53 by fsulvac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,5 @@ t_list				*ft_search_max_value_lst(t_list *lst);
 int					ft_get_min_value(t_list **lst);
 int					ft_get_min_pos(t_list **lst);
 void				free_split(char **strs);
+long				ft_atol(char *str);
 #endif
