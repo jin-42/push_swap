@@ -6,7 +6,7 @@
 /*   By: fsulvac <fsulvac@42.lyon.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 14:45:01 by fsulvac           #+#    #+#             */
-/*   Updated: 2024/02/13 17:15:27 by fsulvac          ###   ########.fr       */
+/*   Updated: 2024/02/14 13:34:59 by fsulvac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,8 +92,8 @@ static bool	error_syntax(const char *str)
 
 t_list	*ft_parsing(char **av)
 {
-	int i;
-	t_list *lst;
+	int		i;
+	t_list	*lst;
 
 	i = -1;
 	while (av[++i])
